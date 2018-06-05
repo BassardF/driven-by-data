@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
 
 import Context from '../../context/context';
 import SportTile from '../common/SportTile';
@@ -17,9 +18,13 @@ class InnerSports extends Component {
           <GridList cellHeight={160} className="grid" cols={3}>
             {state.sports &&
               state.sports.map(sport => (
-                <SportTile key={sport.id} sport={sport} />
+                <GridListTile key={sport.id} cols={1}>
+                  <SportTile sport={sport} />
+                </GridListTile>
               ))}
-            <SportTile />
+            <GridListTile key="new-sport-tile" cols={1}>
+              <SportTile />
+            </GridListTile>
           </GridList>
         )}
       </Context.Consumer>

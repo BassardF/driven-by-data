@@ -16,10 +16,25 @@ class Breadcrumbs extends Component {
                 <Fragment>
                   <span> / </span>
                   <Link
-                    to={`/${state.selectedSport}/exercices`}
-                    href={`/${state.selectedSport}/exercices`}
+                    to={`/sports/${state.selectedSport}/exercices`}
+                    href={`/sports/${state.selectedSport}/exercices`}
                   >
                     {state.selectedSport}
+                  </Link>
+                </Fragment>
+              )}
+              {state.selectedExercice && (
+                <Fragment>
+                  <span> / </span>
+                  <Link
+                    to={`/sports/${state.selectedSport}/exercices/${
+                      state.selectedExercice
+                    }`}
+                    href={`/sports/${state.selectedSport}/exercices/${
+                      state.selectedExercice
+                    }`}
+                  >
+                    {state.selectedExercice}
                   </Link>
                 </Fragment>
               )}
